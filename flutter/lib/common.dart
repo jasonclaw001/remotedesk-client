@@ -169,31 +169,31 @@ class ColorThemeExtension extends ThemeExtension<ColorThemeExtension> {
   final Color? divider;
 
   static final light = ColorThemeExtension(
-    border: Color(0xFFCCCCCC),
-    border2: Color(0xFFBBBBBB),
-    border3: Colors.black26,
-    highlight: Color(0xFFE5E5E5),
-    drag_indicator: Colors.grey[800],
+    border: Color(0xFFE4E4E7),
+    border2: Color(0xFFD4D4D8),
+    border3: Color(0x14000000),
+    highlight: Color(0xFFEEF2FF),
+    drag_indicator: Colors.grey[700],
     shadow: Colors.black,
-    errorBannerBg: Color(0xFFFDEEEB),
-    me: Colors.green,
-    toastBg: Colors.black.withOpacity(0.6),
+    errorBannerBg: Color(0xFFFEF2F2),
+    me: Color(0xFF10B981),
+    toastBg: Colors.black.withOpacity(0.75),
     toastText: Colors.white,
-    divider: Colors.black38,
+    divider: Color(0xFFE4E4E7),
   );
 
   static final dark = ColorThemeExtension(
-    border: Color(0xFF555555),
-    border2: Color(0xFFE5E5E5),
-    border3: Colors.white24,
-    highlight: Color(0xFF3F3F3F),
+    border: Color(0xFF26272E),
+    border2: Color(0xFF3F3F46),
+    border3: Color(0x1FFFFFFF),
+    highlight: Color(0xFF1E1F26),
     drag_indicator: Colors.grey,
-    shadow: Colors.grey,
-    errorBannerBg: Color(0xFF470F2D),
-    me: Colors.greenAccent,
-    toastBg: Colors.white.withOpacity(0.6),
+    shadow: Colors.black,
+    errorBannerBg: Color(0xFF3B0D1F),
+    me: Color(0xFF34D399),
+    toastBg: Colors.white.withOpacity(0.85),
     toastText: Colors.black,
-    divider: Colors.white38,
+    divider: Color(0xFF26272E),
   );
 
   @override
@@ -250,18 +250,20 @@ class ColorThemeExtension extends ThemeExtension<ColorThemeExtension> {
 class MyTheme {
   MyTheme._();
 
-  static const Color grayBg = Color(0xFFEFEFF2);
-  static const Color accent = Color(0xFF0071FF);
-  static const Color accent50 = Color(0x770071FF);
-  static const Color accent80 = Color(0xAA0071FF);
-  static const Color canvasColor = Color(0xFF212121);
-  static const Color border = Color(0xFFCCCCCC);
-  static const Color idColor = Color(0xFF00B6F0);
+  // RemoteDesk design system — modern minimal (Linear/Vercel-style), indigo accent.
+  // Single source of truth: swap these constants to rebrand the whole app.
+  static const Color grayBg = Color(0xFFF6F7F9); // light surface / input fill
+  static const Color accent = Color(0xFF4F46E5); // indigo-600 — primary brand
+  static const Color accent50 = Color(0x774F46E5);
+  static const Color accent80 = Color(0xAA4F46E5);
+  static const Color canvasColor = Color(0xFF0B0B10);
+  static const Color border = Color(0xFFE4E4E7); // zinc-200 hairline
+  static const Color idColor = Color(0xFF4F46E5); // match brand
   static const Color darkGray = Color.fromARGB(255, 148, 148, 148);
-  static const Color cmIdColor = Color(0xFF21790B);
+  static const Color cmIdColor = Color(0xFF10B981); // emerald-500 (success/online)
   static const Color dark = Colors.black87;
-  static const Color button = Color(0xFF2C8CFF);
-  static const Color hoverBorder = Color(0xFF999999);
+  static const Color button = Color(0xFF6366F1); // indigo-500 (slightly lighter)
+  static const Color hoverBorder = Color(0xFF9CA3AF);
 
   // ListTile
   static const ListTileThemeData listTileTheme = ListTileThemeData(
@@ -375,19 +377,19 @@ class MyTheme {
     // https://stackoverflow.com/questions/77537315/after-upgrading-to-flutter-3-16-the-app-bar-background-color-button-size-and
     useMaterial3: false,
     brightness: Brightness.light,
-    hoverColor: Color.fromARGB(255, 224, 224, 224),
-    scaffoldBackgroundColor: Colors.white,
+    hoverColor: const Color(0xFFEEF2FF), // indigo-50 hover
+    scaffoldBackgroundColor: const Color(0xFFFAFAFA),
     dialogBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
       shadowColor: Colors.transparent,
     ),
     dialogTheme: DialogTheme(
-      elevation: 15,
+      elevation: 8,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
+        borderRadius: BorderRadius.circular(12.0),
+        side: const BorderSide(
           width: 1,
-          color: grayBg,
+          color: Color(0xFFE4E4E7),
         ),
       ),
     ),
@@ -399,21 +401,42 @@ class MyTheme {
             isDense: true,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Color(0xFFE4E4E7), width: 1),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Color(0xFFE4E4E7), width: 1),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: accent, width: 1.5),
             ),
           )
         : null,
     textTheme: const TextTheme(
-        titleLarge: TextStyle(fontSize: 19, color: Colors.black87),
-        titleSmall: TextStyle(fontSize: 14, color: Colors.black87),
-        bodySmall: TextStyle(fontSize: 12, color: Colors.black87, height: 1.25),
+        titleLarge: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            letterSpacing: -0.2,
+            color: Color(0xFF111827)),
+        titleSmall: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF111827)),
+        bodySmall:
+            TextStyle(fontSize: 12, color: Color(0xFF4B5563), height: 1.4),
         bodyMedium:
-            TextStyle(fontSize: 14, color: Colors.black87, height: 1.25),
-        labelLarge: TextStyle(fontSize: 16.0, color: MyTheme.accent80)),
-    cardColor: grayBg,
-    hintColor: Color(0xFFAAAAAA),
+            TextStyle(fontSize: 14, color: Color(0xFF1F2937), height: 1.45),
+        labelLarge: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0.1,
+            color: MyTheme.accent)),
+    cardColor: Colors.white,
+    hintColor: const Color(0xFF9CA3AF),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     tabBarTheme: const TabBarTheme(
-      labelColor: Colors.black87,
+      labelColor: Color(0xFF111827),
     ),
     tooltipTheme: tooltipTheme(),
     splashColor: (isDesktop || isWebDesktop) ? Colors.transparent : null,
@@ -423,8 +446,9 @@ class MyTheme {
         ? TextButtonThemeData(
             style: TextButton.styleFrom(
               splashFactory: NoSplash.splashFactory,
+              foregroundColor: MyTheme.accent,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
+                borderRadius: BorderRadius.circular(8.0),
               ),
             ),
           )
@@ -432,6 +456,9 @@ class MyTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: MyTheme.accent,
+        foregroundColor: Colors.white,
+        elevation: 0,
+        textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -439,8 +466,9 @@ class MyTheme {
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        backgroundColor: grayBg,
-        foregroundColor: Colors.black87,
+        backgroundColor: Colors.white,
+        foregroundColor: const Color(0xFF111827),
+        side: const BorderSide(color: Color(0xFFE4E4E7), width: 1),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -453,16 +481,20 @@ class MyTheme {
     menuBarTheme: MenuBarThemeData(
         style:
             MenuStyle(backgroundColor: MaterialStatePropertyAll(Colors.white))),
-    colorScheme: ColorScheme.light(
-        primary: Colors.blue, secondary: accent, background: grayBg),
+    colorScheme: const ColorScheme.light(
+        primary: accent,
+        secondary: accent,
+        background: Color(0xFFFAFAFA),
+        surface: Colors.white),
     popupMenuTheme: PopupMenuThemeData(
         color: Colors.white,
+        elevation: 6,
         shape: RoundedRectangleBorder(
           side: BorderSide(
               color: (isDesktop || isWebDesktop)
-                  ? Color(0xFFECECEC)
+                  ? const Color(0xFFE4E4E7)
                   : Colors.transparent),
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
         )),
   ).copyWith(
     extensions: <ThemeExtension<dynamic>>[
@@ -473,48 +505,64 @@ class MyTheme {
   static ThemeData darkTheme = ThemeData(
     useMaterial3: false,
     brightness: Brightness.dark,
-    hoverColor: Color.fromARGB(255, 45, 46, 53),
-    scaffoldBackgroundColor: Color(0xFF18191E),
-    dialogBackgroundColor: Color(0xFF18191E),
+    hoverColor: const Color(0xFF1E1F26),
+    scaffoldBackgroundColor: const Color(0xFF0B0B10),
+    dialogBackgroundColor: const Color(0xFF13131A),
     appBarTheme: AppBarTheme(
       shadowColor: Colors.transparent,
     ),
     dialogTheme: DialogTheme(
-      elevation: 15,
+      elevation: 8,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
+        borderRadius: BorderRadius.circular(12.0),
+        side: const BorderSide(
           width: 1,
-          color: Color(0xFF24252B),
+          color: Color(0xFF26272E),
         ),
       ),
     ),
     scrollbarTheme: scrollbarThemeDark,
     inputDecorationTheme: (isDesktop || isWebDesktop)
         ? InputDecorationTheme(
-            fillColor: Color(0xFF24252B),
+            fillColor: const Color(0xFF17181F),
             filled: true,
             isDense: true,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Color(0xFF26272E), width: 1),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Color(0xFF26272E), width: 1),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: accent, width: 1.5),
             ),
           )
         : null,
     textTheme: const TextTheme(
-      titleLarge: TextStyle(fontSize: 19),
-      titleSmall: TextStyle(fontSize: 14),
-      bodySmall: TextStyle(fontSize: 12, height: 1.25),
-      bodyMedium: TextStyle(fontSize: 14, height: 1.25),
+      titleLarge: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
+          letterSpacing: -0.2,
+          color: Color(0xFFF4F4F5)),
+      titleSmall: TextStyle(
+          fontSize: 14, fontWeight: FontWeight.w600, color: Color(0xFFF4F4F5)),
+      bodySmall: TextStyle(fontSize: 12, height: 1.4, color: Color(0xFFA1A1AA)),
+      bodyMedium:
+          TextStyle(fontSize: 14, height: 1.45, color: Color(0xFFE4E4E7)),
       labelLarge: TextStyle(
-        fontSize: 16.0,
-        fontWeight: FontWeight.bold,
-        color: accent80,
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.1,
+        color: accent,
       ),
     ),
-    cardColor: Color(0xFF24252B),
+    cardColor: const Color(0xFF13131A),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     tabBarTheme: const TabBarTheme(
-      labelColor: Colors.white70,
+      labelColor: Color(0xFFE4E4E7),
     ),
     tooltipTheme: tooltipTheme(),
     splashColor: (isDesktop || isWebDesktop) ? Colors.transparent : null,
@@ -524,10 +572,10 @@ class MyTheme {
         ? TextButtonThemeData(
             style: TextButton.styleFrom(
               splashFactory: NoSplash.splashFactory,
-              disabledForegroundColor: Colors.white70,
-              foregroundColor: Colors.white70,
+              disabledForegroundColor: const Color(0xFF71717A),
+              foregroundColor: const Color(0xFFE4E4E7),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
+                borderRadius: BorderRadius.circular(8.0),
               ),
             ),
           )
@@ -536,8 +584,10 @@ class MyTheme {
       style: ElevatedButton.styleFrom(
         backgroundColor: MyTheme.accent,
         foregroundColor: Colors.white,
-        disabledForegroundColor: Colors.white70,
-        disabledBackgroundColor: Colors.white10,
+        elevation: 0,
+        textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+        disabledForegroundColor: const Color(0xFF71717A),
+        disabledBackgroundColor: const Color(0xFF1F2028),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -545,10 +595,10 @@ class MyTheme {
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        backgroundColor: Color(0xFF24252B),
-        side: BorderSide(color: Colors.white12, width: 0.5),
-        disabledForegroundColor: Colors.white70,
-        foregroundColor: Colors.white70,
+        backgroundColor: const Color(0xFF17181F),
+        side: const BorderSide(color: Color(0xFF26272E), width: 1),
+        disabledForegroundColor: const Color(0xFF71717A),
+        foregroundColor: const Color(0xFFE4E4E7),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -560,17 +610,21 @@ class MyTheme {
     listTileTheme: listTileTheme,
     menuBarTheme: MenuBarThemeData(
         style: MenuStyle(
-            backgroundColor: MaterialStatePropertyAll(Color(0xFF121212)))),
-    colorScheme: ColorScheme.dark(
-      primary: Colors.blue,
+            backgroundColor:
+                MaterialStatePropertyAll(const Color(0xFF0B0B10)))),
+    colorScheme: const ColorScheme.dark(
+      primary: accent,
       secondary: accent,
-      background: Color(0xFF24252B),
+      background: Color(0xFF0B0B10),
+      surface: Color(0xFF13131A),
     ),
     popupMenuTheme: PopupMenuThemeData(
+        color: const Color(0xFF13131A),
+        elevation: 6,
         shape: RoundedRectangleBorder(
-      side: BorderSide(color: Colors.white24),
-      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-    )),
+          side: const BorderSide(color: Color(0xFF26272E)),
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        )),
   ).copyWith(
     extensions: <ThemeExtension<dynamic>>[
       ColorThemeExtension.dark,

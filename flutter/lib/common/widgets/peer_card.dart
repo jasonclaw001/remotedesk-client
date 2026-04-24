@@ -47,9 +47,9 @@ class _PeerCard extends StatefulWidget {
 class _PeerCardState extends State<_PeerCard>
     with AutomaticKeepAliveClientMixin {
   var _menuPos = RelativeRect.fill;
-  final double _cardRadius = 16;
-  final double _tileRadius = 5;
-  final double _borderWidth = 2;
+  final double _cardRadius = 12;
+  final double _tileRadius = 8;
+  final double _borderWidth = 1.5;
 
   @override
   Widget build(BuildContext context) {
