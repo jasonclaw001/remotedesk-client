@@ -478,7 +478,6 @@ class _ConnectionPageState extends State<ConnectionPage>
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(kRadiusSm),
                               child: Material(
-                                elevation: 4,
                                 child: ConstrainedBox(
                                   constraints: BoxConstraints(
                                     maxHeight: maxHeight,
@@ -593,7 +592,6 @@ class _ConnectionPageState extends State<ConnectionPage>
                                                       .dividerHeight)))
                                       .expand((i) => i)
                                       .toList(),
-                                  elevation: 8,
                                 )
                                     .then((_) {
                                   _menuOpen.value = false;

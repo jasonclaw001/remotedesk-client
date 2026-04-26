@@ -1026,7 +1026,6 @@ class _FileManagerViewState extends State<FileManagerView> {
               )
               .expand((i) => i)
               .toList(),
-          elevation: 8,
         ),
         child: SvgPicture.asset(
           "assets/dots.svg",
@@ -1577,7 +1576,6 @@ class _FileManagerViewState extends State<FileManagerView> {
                     mod_menu.showMenu(
                         context: context,
                         position: RelativeRect.fromLTRB(x, y, x, y),
-                        elevation: 4,
                         items: menuItems
                             .map((e) => e.build(
                                 context,
