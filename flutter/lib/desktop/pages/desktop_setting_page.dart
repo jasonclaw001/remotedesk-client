@@ -1312,7 +1312,7 @@ class _SafetyState extends State<_Safety> with AutomaticKeepAliveClientMixin {
                     decoration: const InputDecoration(
                       hintText: '21118',
                       contentPadding:
-                          EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                          EdgeInsets.symmetric(vertical: kSpace3, horizontal: kSpace3),
                     ),
                   ).workaroundFreezeLinuxMint().marginOnly(right: 15),
                 ),
@@ -1594,7 +1594,7 @@ class _NetworkState extends State<_Network> with AutomaticKeepAliveClientMixin {
                         translate(title),
                         style: TextStyle(fontSize: _kContentFontSize),
                       ),
-                      SizedBox(width: 5),
+                      SizedBox(width: kSpace1),
                       Icon(
                         Icons.help_outline,
                         size: 14,
@@ -1621,9 +1621,9 @@ class _NetworkState extends State<_Network> with AutomaticKeepAliveClientMixin {
         onTap: onTap,
         trailing: trailing,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(kRadiusMd),
         ),
-        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        contentPadding: EdgeInsets.symmetric(horizontal: kSpace4),
         minLeadingWidth: 0,
         horizontalTitleGap: 10,
       );
@@ -2039,17 +2039,17 @@ class _AccountState extends State<_Account> {
     return Obx(() => Offstage(
           offstage: gFFI.userModel.userName.value.isEmpty,
           child: Container(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(kSpace3),
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.surfaceContainerHighest,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(kRadiusMd),
             ),
             child: Builder(builder: (context) {
               final avatarWidget = _buildUserAvatar();
               return Row(
                 children: [
                   if (avatarWidget != null) avatarWidget,
-                  const SizedBox(width: 12),
+                  const SizedBox(width: kSpace3),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -2063,7 +2063,7 @@ class _AccountState extends State<_Account> {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        const SizedBox(height: 2),
+                        const SizedBox(height: kSpace1),
                         SelectionArea(
                           child: Text(
                             '@${gFFI.userModel.userName.value}',
@@ -2406,7 +2406,7 @@ class _AboutState extends State<_About> {
               Container(
                 decoration: const BoxDecoration(color: Color(0xFF2c8cff)),
                 padding:
-                    const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
+                    const EdgeInsets.symmetric(vertical: kSpace6, horizontal: kSpace2),
                 child: SelectionArea(
                     child: Row(
                   children: [
@@ -2855,7 +2855,7 @@ _LabeledTextField(
       TableRow(
         children: [
           Padding(
-            padding: const EdgeInsets.only(right: 10),
+            padding: const EdgeInsets.only(right: kSpace2),
             child: Text(
               '${translate(label)}:',
               textAlign: TextAlign.right,
