@@ -322,7 +322,8 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                       focusedBorder: InputBorder.none,
                       isDense: true,
                       filled: false,
-                      contentPadding: EdgeInsets.only(top: 8, bottom: 4),
+                      contentPadding:
+                          EdgeInsets.only(top: kSpace2, bottom: kSpace1),
                     ),
                     style: const TextStyle(
                         fontSize: 17,
@@ -376,8 +377,8 @@ class _DesktopHomePageState extends State<DesktopHomePage>
   buildTip(BuildContext context) {
     final isOutgoingOnly = bind.isOutgoingOnly();
     return Padding(
-      padding:
-          const EdgeInsets.only(left: 16.0, right: 16, top: 20.0, bottom: 4),
+      padding: const EdgeInsets.only(
+          left: kSpace4, right: kSpace4, top: kSpace5, bottom: kSpace1),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -591,8 +592,8 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.fromLTRB(
-              12, marginTop, 12, bind.isIncomingOnly() ? marginTop : 8),
+          margin: EdgeInsets.fromLTRB(kSpace3, marginTop, kSpace3,
+              bind.isIncomingOnly() ? marginTop : kSpace2),
           child: Container(
               decoration: BoxDecoration(
                 color: cardBg,
@@ -1113,9 +1114,9 @@ void setPasswordDialog({VoidCallback? notEmptyCallback}) async {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     cancelButton,
-                    const SizedBox(width: 4),
+                    const SizedBox(width: kSpace1),
                     removeButton,
-                    const SizedBox(width: 4),
+                    const SizedBox(width: kSpace1),
                     okButton,
                   ],
                 ),
