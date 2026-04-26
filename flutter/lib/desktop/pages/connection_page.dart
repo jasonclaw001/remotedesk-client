@@ -314,7 +314,7 @@ class _ConnectionPageState extends State<ConnectionPage>
                 Flexible(child: _buildRemoteIDTextField(context)),
               ],
             ).marginOnly(top: 22),
-            SizedBox(height: 12),
+            SizedBox(height: kSpace3),
             Divider().paddingOnly(right: 12),
             Expanded(child: PeerTabPage()),
           ],
@@ -343,9 +343,10 @@ class _ConnectionPageState extends State<ConnectionPage>
   Widget _buildRemoteIDTextField(BuildContext context) {
     var w = Container(
       width: 320 + 20 * 2,
-      padding: const EdgeInsets.fromLTRB(20, 24, 20, 22),
+      padding:
+          const EdgeInsets.fromLTRB(kSpace5, kSpace6, kSpace5, kSpace6),
       decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(13)),
+          borderRadius: const BorderRadius.all(Radius.circular(kRadiusLg)),
           border: Border.all(color: Theme.of(context).colorScheme.background)),
       child: Ink(
         child: Column(
@@ -431,7 +432,7 @@ class _ConnectionPageState extends State<ConnectionPage>
                                   ? null
                                   : translate('Enter Remote ID'),
                               contentPadding: const EdgeInsets.symmetric(
-                                  horizontal: 15, vertical: 13)),
+                                  horizontal: kSpace4, vertical: kSpace3)),
                           controller: fieldTextEditingController,
                           inputFormatters: [IDTextInputFormatter()],
                           onChanged: (v) {
@@ -475,7 +476,7 @@ class _ConnectionPageState extends State<ConnectionPage>
                             ],
                           ),
                           child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5),
+                              borderRadius: BorderRadius.circular(kRadiusSm),
                               child: Material(
                                 elevation: 4,
                                 child: ConstrainedBox(
@@ -494,7 +495,7 @@ class _ConnectionPageState extends State<ConnectionPage>
                                           ))
                                       : Padding(
                                           padding:
-                                              const EdgeInsets.only(top: 5),
+                                              const EdgeInsets.only(top: kSpace1),
                                           child: ListView(
                                             children: options
                                                 .map((peer) =>
@@ -513,7 +514,7 @@ class _ConnectionPageState extends State<ConnectionPage>
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 13.0),
+              padding: const EdgeInsets.only(top: kSpace3),
               child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                 SizedBox(
                   height: 28.0,
@@ -524,13 +525,13 @@ class _ConnectionPageState extends State<ConnectionPage>
                     child: Text(translate("Connect")),
                   ),
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: kSpace2),
                 Container(
                   height: 28.0,
                   width: 28.0,
                   decoration: BoxDecoration(
                     border: Border.all(color: Theme.of(context).dividerColor),
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(kRadiusMd),
                   ),
                   child: Center(
                     child: StatefulBuilder(
