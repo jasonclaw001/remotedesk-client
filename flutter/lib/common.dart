@@ -480,11 +480,13 @@ class MyTheme {
     menuBarTheme: MenuBarThemeData(
         style:
             MenuStyle(backgroundColor: MaterialStatePropertyAll(Colors.white))),
-    colorScheme: const ColorScheme.light(
-        primary: accent,
-        secondary: accent,
-        background: Color(0xFFFAFAFA),
-        surface: Colors.white),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: const Color(0xFF4F46E5),
+      brightness: Brightness.light,
+    ).copyWith(
+      surface: Colors.white,
+      background: const Color(0xFFFAFAFA),
+    ),
     popupMenuTheme: PopupMenuThemeData(
         color: Colors.white,
         elevation: 6,
@@ -611,11 +613,12 @@ class MyTheme {
         style: MenuStyle(
             backgroundColor:
                 MaterialStatePropertyAll(const Color(0xFF0B0B10)))),
-    colorScheme: const ColorScheme.dark(
-      primary: accent,
-      secondary: accent,
-      background: Color(0xFF0B0B10),
-      surface: Color(0xFF13131A),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: const Color(0xFF4F46E5),
+      brightness: Brightness.dark,
+    ).copyWith(
+      surface: const Color(0xFF13131A),
+      background: const Color(0xFF0B0B10),
     ),
     popupMenuTheme: PopupMenuThemeData(
         color: const Color(0xFF13131A),
