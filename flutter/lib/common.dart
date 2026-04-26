@@ -442,9 +442,6 @@ class MyTheme {
         ? TextButtonThemeData(
             style: TextButton.styleFrom(
               foregroundColor: MyTheme.accent,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
             ),
           )
         : mobileTextButtonTheme,
@@ -454,9 +451,6 @@ class MyTheme {
         foregroundColor: Colors.white,
         elevation: 0,
         textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
@@ -464,9 +458,6 @@ class MyTheme {
         backgroundColor: Colors.white,
         foregroundColor: const Color(0xFF111827),
         side: const BorderSide(color: Color(0xFFE4E4E7), width: 1),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
       ),
     ),
     switchTheme: switchTheme(),
@@ -567,9 +558,6 @@ class MyTheme {
             style: TextButton.styleFrom(
               disabledForegroundColor: const Color(0xFF71717A),
               foregroundColor: const Color(0xFFE4E4E7),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
             ),
           )
         : mobileTextButtonTheme,
@@ -581,9 +569,6 @@ class MyTheme {
         textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
         disabledForegroundColor: const Color(0xFF71717A),
         disabledBackgroundColor: const Color(0xFF1F2028),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
@@ -592,9 +577,6 @@ class MyTheme {
         side: const BorderSide(color: Color(0xFF26272E), width: 1),
         disabledForegroundColor: const Color(0xFF71717A),
         foregroundColor: const Color(0xFFE4E4E7),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
       ),
     ),
     switchTheme: switchTheme(),
