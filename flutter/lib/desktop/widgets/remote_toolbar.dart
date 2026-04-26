@@ -342,7 +342,7 @@ class _RemoteToolbarState extends State<RemoteToolbar> {
         triggerAutoHide();
       }
       final borderRadius = BorderRadius.vertical(
-        bottom: Radius.circular(5),
+        bottom: Radius.circular(kRadiusSm),
       );
       return Align(
         alignment: FractionalOffset(_fractionX.value, 0),
@@ -547,7 +547,7 @@ class _MonitorMenu extends StatelessWidget {
         hoverColor: _ToolbarTheme.hoverBlueColor,
         menuStyle: MenuStyle(
             padding:
-                MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 6))),
+                MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: kSpace2))),
         menuChildrenGetter: (_) => [buildMonitorSubmenuWidget(context)]);
   }
 
@@ -1319,7 +1319,7 @@ class _CustomScaleMenuControlsState
 
     return Column(children: [
       Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        padding: const EdgeInsets.symmetric(horizontal: kSpace3),
         child: Row(children: [
           Tooltip(
             message: translate('Decrease'),

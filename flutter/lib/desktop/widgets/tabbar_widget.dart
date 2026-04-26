@@ -882,7 +882,7 @@ Future<bool> closeConfirmDialog() async {
       title: Row(children: [
         const Icon(Icons.warning_amber_sharp,
             color: Colors.redAccent, size: 28),
-        const SizedBox(width: 10),
+        const SizedBox(width: kSpace2),
         Text(translate("Warning")),
       ]),
       content: Column(
