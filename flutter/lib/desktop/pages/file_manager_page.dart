@@ -201,7 +201,7 @@ class _FileManagerPageState extends State<FileManagerPage>
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.all(
-          Radius.circular(15.0),
+          Radius.circular(kRadiusLg),
         ),
       ),
       child: child,
@@ -237,7 +237,7 @@ class _FileManagerPageState extends State<FileManagerPage>
             final item = jobs[index];
             final status = item.getStatus();
             return Padding(
-              padding: const EdgeInsets.only(bottom: 5),
+              padding: const EdgeInsets.only(bottom: kSpace1),
               child: generateCard(
                 Column(
                   mainAxisSize: MainAxisSize.min,
@@ -335,8 +335,9 @@ class _FileManagerPageState extends State<FileManagerPage>
     return PreferredSize(
       preferredSize: const Size(200, double.infinity),
       child: Container(
-          margin: const EdgeInsets.only(top: 16.0, bottom: 16.0, right: 16.0),
-          padding: const EdgeInsets.all(8.0),
+          margin: const EdgeInsets.only(
+              top: kSpace4, bottom: kSpace4, right: kSpace4),
+          padding: const EdgeInsets.all(kSpace2),
           child: Obx(
             () => jobController.jobTable.isEmpty
                 ? generateCard(
@@ -445,8 +446,8 @@ class _FileManagerViewState extends State<FileManagerView> {
   Widget build(BuildContext context) {
     _handleColumnPorportions();
     return Container(
-      margin: const EdgeInsets.all(16.0),
-      padding: const EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(kSpace4),
+      padding: const EdgeInsets.all(kSpace2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -524,10 +525,10 @@ class _FileManagerViewState extends State<FileManagerView> {
                           width: 50,
                           height: 50,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                            borderRadius: BorderRadius.all(Radius.circular(kRadiusMd)),
                             color: MyTheme.accent,
                           ),
-                          padding: EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(kSpace2),
                           child: FutureBuilder<String>(
                               future: bind.sessionGetPlatform(
                                   sessionId: _ffi.sessionId,
@@ -603,7 +604,7 @@ class _FileManagerViewState extends State<FileManagerView> {
                     decoration: BoxDecoration(
                       color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.all(
-                        Radius.circular(8.0),
+                        Radius.circular(kRadiusMd),
                       ),
                     ),
                     child: Padding(
@@ -839,8 +840,8 @@ class _FileManagerViewState extends State<FileManagerView> {
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
                             isLocal
-                                ? EdgeInsets.only(left: 10)
-                                : EdgeInsets.only(right: 10)),
+                                ? EdgeInsets.only(left: kSpace2)
+                                : EdgeInsets.only(right: kSpace2)),
                         backgroundColor: MaterialStateProperty.all(
                           selectedItems.items.isEmpty
                               ? MyTheme.accent80
@@ -898,8 +899,8 @@ class _FileManagerViewState extends State<FileManagerView> {
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
                           isLocal
-                              ? EdgeInsets.only(left: 10)
-                              : EdgeInsets.only(right: 10)),
+                              ? EdgeInsets.only(left: kSpace2)
+                              : EdgeInsets.only(right: kSpace2)),
                       backgroundColor: MaterialStateProperty.all(
                         selectedItems.items.isEmpty
                             ? MyTheme.accent80
@@ -1156,7 +1157,7 @@ class _FileManagerViewState extends State<FileManagerView> {
                       ? MyTheme.button
                       : Theme.of(context).cardColor,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(5.0),
+                    Radius.circular(kRadiusSm),
                   ),
                   border: rightClickEntry.value == entry
                       ? Border.all(
@@ -1553,7 +1554,7 @@ class _FileManagerViewState extends State<FileManagerView> {
                                             .iconTheme
                                             .color
                                             ?.withOpacity(0.7)),
-                                    SizedBox(width: 10),
+                                    SizedBox(width: kSpace2),
                                     Text(
                                       entry.name,
                                       style: style,
@@ -1663,7 +1664,7 @@ class _FileManagerViewState extends State<FileManagerView> {
               border: InputBorder.none,
               isDense: true,
               prefix: Padding(
-                padding: EdgeInsets.only(left: 4.0),
+                padding: EdgeInsets.only(left: kSpace1),
               ),
             ),
             controller: textController,
@@ -1688,7 +1689,7 @@ Widget buildWindowsThisPC(BuildContext context, [TextStyle? textStyle]) {
   final color = Theme.of(context).iconTheme.color?.withOpacity(0.7);
   return Row(children: [
     Icon(Icons.computer, size: 20, color: color),
-    SizedBox(width: 10),
+    SizedBox(width: kSpace2),
     Text(translate('This PC'), style: textStyle)
   ]);
 }
