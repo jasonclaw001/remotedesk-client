@@ -438,13 +438,9 @@ class MyTheme {
       labelColor: Color(0xFF111827),
     ),
     tooltipTheme: tooltipTheme(),
-    splashColor: (isDesktop || isWebDesktop) ? Colors.transparent : null,
-    highlightColor: (isDesktop || isWebDesktop) ? Colors.transparent : null,
-    splashFactory: (isDesktop || isWebDesktop) ? NoSplash.splashFactory : null,
     textButtonTheme: (isDesktop || isWebDesktop)
         ? TextButtonThemeData(
             style: TextButton.styleFrom(
-              splashFactory: NoSplash.splashFactory,
               foregroundColor: MyTheme.accent,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
@@ -566,13 +562,9 @@ class MyTheme {
       labelColor: Color(0xFFE4E4E7),
     ),
     tooltipTheme: tooltipTheme(),
-    splashColor: (isDesktop || isWebDesktop) ? Colors.transparent : null,
-    highlightColor: (isDesktop || isWebDesktop) ? Colors.transparent : null,
-    splashFactory: (isDesktop || isWebDesktop) ? NoSplash.splashFactory : null,
     textButtonTheme: (isDesktop || isWebDesktop)
         ? TextButtonThemeData(
             style: TextButton.styleFrom(
-              splashFactory: NoSplash.splashFactory,
               disabledForegroundColor: const Color(0xFF71717A),
               foregroundColor: const Color(0xFFE4E4E7),
               shape: RoundedRectangleBorder(
