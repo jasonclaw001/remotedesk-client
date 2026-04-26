@@ -382,16 +382,7 @@ class MyTheme {
     appBarTheme: AppBarTheme(
       shadowColor: Colors.transparent,
     ),
-    dialogTheme: DialogTheme(
-      elevation: 8,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.0),
-        side: const BorderSide(
-          width: 1,
-          color: Color(0xFFE4E4E7),
-        ),
-      ),
-    ),
+    dialogTheme: const DialogTheme(),
     scrollbarTheme: scrollbarTheme,
     inputDecorationTheme: isDesktop
         ? InputDecorationTheme(
@@ -474,16 +465,9 @@ class MyTheme {
       surface: Colors.white,
       background: const Color(0xFFFAFAFA),
     ),
-    popupMenuTheme: PopupMenuThemeData(
-        color: Colors.white,
-        elevation: 6,
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-              color: (isDesktop || isWebDesktop)
-                  ? const Color(0xFFE4E4E7)
-                  : Colors.transparent),
-          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-        )),
+    popupMenuTheme: const PopupMenuThemeData(
+      color: Colors.white,
+    ),
   ).copyWith(
     extensions: <ThemeExtension<dynamic>>[
       ColorThemeExtension.light,
@@ -499,16 +483,7 @@ class MyTheme {
     appBarTheme: AppBarTheme(
       shadowColor: Colors.transparent,
     ),
-    dialogTheme: DialogTheme(
-      elevation: 8,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.0),
-        side: const BorderSide(
-          width: 1,
-          color: Color(0xFF26272E),
-        ),
-      ),
-    ),
+    dialogTheme: const DialogTheme(),
     scrollbarTheme: scrollbarThemeDark,
     inputDecorationTheme: (isDesktop || isWebDesktop)
         ? InputDecorationTheme(
@@ -594,13 +569,9 @@ class MyTheme {
       surface: const Color(0xFF13131A),
       background: const Color(0xFF0B0B10),
     ),
-    popupMenuTheme: PopupMenuThemeData(
-        color: const Color(0xFF13131A),
-        elevation: 6,
-        shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Color(0xFF26272E)),
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        )),
+    popupMenuTheme: const PopupMenuThemeData(
+      color: Color(0xFF13131A),
+    ),
   ).copyWith(
     extensions: <ThemeExtension<dynamic>>[
       ColorThemeExtension.dark,
