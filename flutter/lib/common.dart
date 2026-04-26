@@ -375,6 +375,7 @@ class MyTheme {
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
+    fontFamily: 'Inter',
     brightness: Brightness.light,
     hoverColor: const Color(0xFFEEF2FF), // indigo-50 hover
     scaffoldBackgroundColor: const Color(0xFFFAFAFA),
@@ -476,6 +477,7 @@ class MyTheme {
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
+    fontFamily: 'Inter',
     brightness: Brightness.dark,
     hoverColor: const Color(0xFF1E1F26),
     scaffoldBackgroundColor: const Color(0xFF0B0B10),
