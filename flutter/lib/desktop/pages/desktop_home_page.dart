@@ -198,7 +198,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     final model = gFFI.serverModel;
     final labelColor = Theme.of(context).textTheme.bodySmall?.color;
     return Container(
-      margin: const EdgeInsets.fromLTRB(16, 6, 12, 0),
+      margin: const EdgeInsets.fromLTRB(kSpace4, kSpace2, kSpace3, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -231,7 +231,8 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                 focusedBorder: InputBorder.none,
                 isDense: true,
                 filled: false,
-                contentPadding: EdgeInsets.only(top: 6, bottom: 2),
+                contentPadding:
+                    EdgeInsets.only(top: kSpace2, bottom: kSpace1),
               ),
               style: TextStyle(
                 fontSize: 22,
@@ -289,7 +290,8 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     final showOneTime = model.approveMode != 'click' &&
         model.verificationMethod != kUsePermanentPassword;
     return Container(
-      margin: const EdgeInsets.fromLTRB(16, 14, 12, 14),
+      margin:
+          const EdgeInsets.fromLTRB(kSpace4, kSpace4, kSpace3, kSpace4),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -391,7 +393,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
-          const SizedBox(height: 6.0),
+          const SizedBox(height: kSpace2),
           if (!isOutgoingOnly)
             Text(
               translate("desk_tip"),
@@ -597,10 +599,10 @@ class _DesktopHomePageState extends State<DesktopHomePage>
           child: Container(
               decoration: BoxDecoration(
                 color: cardBg,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(kRadiusMd),
                 border: Border.all(color: cardBorder, width: 1),
               ),
-              padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+              padding: const EdgeInsets.all(kSpace4),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -613,7 +615,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                                     fontWeight: FontWeight.w600,
                                     fontSize: 13,
                                     letterSpacing: 0.2),
-                              ).marginOnly(bottom: 6),
+                              ).marginOnly(bottom: kSpace2),
                             ]
                           : <Widget>[]) +
                       <Widget>[
@@ -625,7 +627,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                                 color: cardFg.withOpacity(0.95),
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12.5),
-                          ).marginOnly(bottom: btnText.isNotEmpty ? 12 : 0)
+                          ).marginOnly(bottom: btnText.isNotEmpty ? kSpace3 : 0)
                       ] +
                       (btnText.isNotEmpty
                           ? <Widget>[
@@ -636,7 +638,8 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                                     backgroundColor: cardFg,
                                     foregroundColor: Colors.white,
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 14, vertical: 8),
+                                        horizontal: kSpace4,
+                                        vertical: kSpace2),
                                     textStyle: const TextStyle(
                                         fontSize: 13,
                                         fontWeight: FontWeight.w600),
