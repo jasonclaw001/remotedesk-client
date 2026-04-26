@@ -376,7 +376,7 @@ class _AppIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 4.0),
+      margin: EdgeInsets.symmetric(horizontal: kSpace1),
       child: loadIcon(30),
     );
   }
@@ -442,7 +442,7 @@ class _CmHeaderState extends State<_CmHeader>
     super.build(context);
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(kRadiusMd),
         gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
@@ -452,12 +452,12 @@ class _CmHeaderState extends State<_CmHeader>
           ],
         ),
       ),
-      margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
+      margin: EdgeInsets.symmetric(horizontal: kSpace1, vertical: kSpace2),
       padding: EdgeInsets.only(
-        top: 10.0,
-        bottom: 10.0,
-        left: 10.0,
-        right: 5.0,
+        top: kSpace2,
+        bottom: kSpace2,
+        left: kSpace2,
+        right: kSpace1,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -513,7 +513,7 @@ class _CmHeaderState extends State<_CmHeader>
                       style: TextStyle(color: Colors.white70, fontSize: 12),
                     ),
                   ),
-                SizedBox(height: 10.0),
+                SizedBox(height: kSpace2),
                 FittedBox(
                     child: Row(
                   children: [
@@ -584,7 +584,7 @@ class _CmHeaderState extends State<_CmHeader>
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: str2color(client.name),
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(kRadiusLg),
       ),
       child: Text(
         client.name.isNotEmpty ? client.name[0] : '?',
@@ -617,9 +617,9 @@ class _PrivilegeBoardState extends State<_PrivilegeBoard> {
       child: Container(
         decoration: BoxDecoration(
           color: enabled ? MyTheme.accent : Colors.grey[700],
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(kRadiusMd),
         ),
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(kSpace2),
         child: InkWell(
           onTap: () =>
               checkClickTime(widget.client.id, () => onTap?.call(!enabled)),
@@ -646,10 +646,10 @@ class _PrivilegeBoardState extends State<_PrivilegeBoard> {
     return Container(
       width: double.infinity,
       height: 160.0,
-      margin: EdgeInsets.all(5.0),
-      padding: EdgeInsets.all(5.0),
+      margin: EdgeInsets.all(kSpace1),
+      padding: EdgeInsets.all(kSpace1),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(kRadiusMd),
         color: Theme.of(context).colorScheme.background,
         boxShadow: [
           BoxShadow(
@@ -1108,7 +1108,7 @@ class _CmControlPanel extends StatelessWidget {
         ),
       );
     }
-    final borderRadius = BorderRadius.circular(10.0);
+    final borderRadius = BorderRadius.circular(kRadiusMd);
     final btn = Container(
       height: 28,
       decoration: BoxDecoration(
@@ -1214,7 +1214,7 @@ class __FileTransferLogPageState extends State<_FileTransferLogPage> {
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.all(
-          Radius.circular(15.0),
+          Radius.circular(kRadiusLg),
         ),
       ),
       child: child,
@@ -1278,7 +1278,7 @@ class __FileTransferLogPageState extends State<_FileTransferLogPage> {
     return PreferredSize(
       preferredSize: const Size(200, double.infinity),
       child: Container(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(kSpace3),
           child: Obx(
             () {
               final jobTable = gFFI.cmFileModel.currentJobTable;
@@ -1287,7 +1287,7 @@ class __FileTransferLogPageState extends State<_FileTransferLogPage> {
                     itemBuilder: (BuildContext context, int index) {
                       final item = jobs[index];
                       return Padding(
-                        padding: const EdgeInsets.only(bottom: 5),
+                        padding: const EdgeInsets.only(bottom: kSpace1),
                         child: generateCard(
                           Column(
                             mainAxisSize: MainAxisSize.min,
@@ -1351,7 +1351,7 @@ class __FileTransferLogPageState extends State<_FileTransferLogPage> {
                                                 JobState.inProgress,
                                             child: LinearPercentIndicator(
                                               padding:
-                                                  EdgeInsets.only(right: 15),
+                                                  EdgeInsets.only(right: kSpace4),
                                               animateFromLastPercent: true,
                                               center: Text(
                                                 '${(item.finishedSize / item.totalSize * 100).toStringAsFixed(0)}%',
