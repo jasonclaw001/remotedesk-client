@@ -343,6 +343,33 @@ const kFrameBoxShadowBlurRadius = 32.0;
 const kFrameBoxShadowOffsetFocused = 4.0;
 const kFrameBoxShadowOffsetUnfocused = 2.0;
 
+// ===== Design tokens (UI redesign) ========================================
+// Spacing scale (multiples of 4). Use these instead of magic numbers in
+// EdgeInsets / SizedBox / Padding so layout density stays consistent across
+// screens. Naming mirrors common design-system conventions (sm/md/lg).
+const double kSpace1 = 4.0;
+const double kSpace2 = 8.0;
+const double kSpace3 = 12.0;
+const double kSpace4 = 16.0;
+const double kSpace5 = 20.0;
+const double kSpace6 = 24.0;
+const double kSpace8 = 32.0;
+const double kSpace10 = 40.0;
+
+// Radius scale. `kRadiusSm` for chips/inputs, `kRadiusMd` for buttons/cards,
+// `kRadiusLg` for dialogs/sheets. Existing `kFrameBorderRadius` (12.0) is
+// kept for window-frame compatibility and equals `kRadiusLg`.
+const double kRadiusSm = 6.0;
+const double kRadiusMd = 8.0;
+const double kRadiusLg = 12.0;
+
+// Motion durations. Use these instead of inline `Duration(milliseconds: …)`
+// so animation timing is uniform.
+const Duration kMotionFast = Duration(milliseconds: 120);
+const Duration kMotionMedium = Duration(milliseconds: 200);
+const Duration kMotionSlow = Duration(milliseconds: 300);
+// ==========================================================================
+
 const kInvalidValueStr = 'InvalidValueStr';
 
 // Config key shared by flutter and other ui.
